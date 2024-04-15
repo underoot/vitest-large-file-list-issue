@@ -1,0 +1,21 @@
+{
+  "name": "@underoot/vitest-large-file-list-issue",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@vitest/browser": "^1.5.0",
+    "vitest": "^1.5.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.43.1"
+  },
+  "scripts": {
+    "clean": "node scripts/clean-files.cjs",
+    "prerun:good": "npm run clean && node scripts/create-files.cjs 127",
+    "prerun:bad": "npm run clean && node scripts/create-files.cjs 128",
+    "run:good": "npx vitest",
+    "run:bad": "npx vitest"
+  }
+}
